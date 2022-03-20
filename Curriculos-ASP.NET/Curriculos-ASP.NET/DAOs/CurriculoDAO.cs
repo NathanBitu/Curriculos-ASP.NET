@@ -70,7 +70,6 @@ namespace Curriculos_ASP.NET.DAOs
         /// <param name="cpf">String cpf, chave primária de um currículo.</param>
         public void Excluir(string cpf)
         {
-            //Verificar a aplicação de sql injection
             string sql = "delete curriculos where cpf = @cpf";
             SqlParameter[] parametros = new SqlParameter[1];
             parametros[0] = new SqlParameter("cpf", cpf);

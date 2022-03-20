@@ -9,22 +9,28 @@
 
 <table class="table table-striped table-responsive">
     <tr>
-        <th>Ações</th>
         <th>Nome</th>
         <th>CPF</th>
+        <th>Edição</th>
+        <th>Deletar</th>
     </tr>
 
     @foreach (var curriculo in Model)
     {
         <tr>
-            <td><a href="/curriculo/Edit?cpf=@curriculo.cpf">Editar</a> </td>
             <td> @curriculo.nome</td>
             <td> @curriculo.cpf</td>
+            <td><a href="/curriculo/Edit?cpf=@curriculo.cpf">Editar</a></td>
+            <td><a href="javascript:apagarCurriculo(@curriculo.cpf)">Apagar</a></td>
         </tr>
     }
 
 </table>
 
-
-
-
+<script>
+ function apagarCurriculo(cpf)
+ {
+ if (confirm('Confirma a exclusão do registro?'))
+ location.href = 'curriculo/Delete?cpf=' + cpf;
+ }
+</script>

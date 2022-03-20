@@ -67,5 +67,18 @@ namespace Curriculos_ASP.NET.Controllers
             }
         }
 
+        public IActionResult Delete(string cpf)
+        {
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                dao.Excluir(cpf);
+                return RedirectToAction("index");
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
+        }
     }
 }
