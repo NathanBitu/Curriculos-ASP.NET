@@ -3,6 +3,7 @@ using System.Data;
 using Curriculos_ASP.NET.Models;
 using CadAlunoMVC.DAO;
 using System.Collections.Generic;
+using System;
 
 namespace Curriculos_ASP.NET.DAOs
 {
@@ -15,16 +16,36 @@ namespace Curriculos_ASP.NET.DAOs
         public void Inserir(CurriculoViewModel curriculo)
         {
             string sql =
-           "insert into curriculos(cpf, nome, endereco, telefone, pretencaoSalarial, cargoPretendido, instituicaoFormacao1, tipoFormacao1," +
-           " formacao1, instituicaoFormacao2, tipoFormacao2, formacao2, instituicaoFormacao3, tipoFormacao3, formacao3, instituicaoFormacao4," +
+           "insert into curriculos(cpf, nome, endereco, telefone, pretencaoSalarial, cargoPretendido, instituicaoFormacao1, tipoFormacao1, formacao1," +
+           " instituicaoFormacao2, tipoFormacao2, formacao2, instituicaoFormacao3, tipoFormacao3, formacao3, instituicaoFormacao4," +
            " tipoFormacao4, formacao4, instituicaoFormacao5, tipoFormacao5, formacao5, empresaExperiencia1, tipoExperiencia1, experiencia1," +
-           " empresaExperiencia2, tipoExperiencia2, experiencia2,empresaExperiencia3, tipoExperiencia3, experiencia3, idioma1, idioma2, idioma3)" +
-           " values (@cpf, @nome, @endereco, @telefone, @pretencaoSalarial, @cargoPretendido, @instituicaoFormacao1, @tipoFormacao1," +
-           " @formacao1, @instituicaoFormacao2, @tipoFormacao2, @formacao2, @instituicaoFormacao3, @tipoFormacao3, @formacao3, @instituicaoFormacao4," +
+           " empresaExperiencia2, tipoExperiencia2, experiencia2, empresaExperiencia3, tipoExperiencia3, experiencia3, idioma1, nivelIdioma1, idioma2, nivelIdioma2, idioma3, nivelIdioma3)" +
+           " values (@cpf, @nome, @endereco, @telefone, @pretencaoSalarial, @cargoPretendido, @instituicaoFormacao1, @tipoFormacao1, @formacao1," +
+           " @instituicaoFormacao2, @tipoFormacao2, @formacao2, @instituicaoFormacao3, @tipoFormacao3, @formacao3, @instituicaoFormacao4," +
            " @tipoFormacao4, @formacao4, @instituicaoFormacao5, @tipoFormacao5, @formacao5, @empresaExperiencia1, @tipoExperiencia1, @experiencia1," +
            " @empresaExperiencia2, @tipoExperiencia2, @experiencia2, @empresaExperiencia3, @tipoExperiencia3, @experiencia3, @idioma1, @nivelIdioma1, @idioma2, @nivelIdioma2, @idioma3, @nivelIdioma3)";
 
             HelperDAO.ExecutaSql(sql, CriaParametros(curriculo));
+        }
+
+        /// <summary>
+        /// Método que consulta um aluno
+        /// </summary>
+        /// <param name="cpf">String com CPF para buscar</param>
+        /// <returns></returns>
+        public CurriculoViewModel Consulta(string cpf)
+        {
+            string sql = "select * from curriculos c where c.cpf = @cpf";
+            SqlParameter[] parametros = new SqlParameter[1];
+            parametros[0] = new SqlParameter("cpf", cpf);
+
+            DataTable tabela = HelperDAO.ExecutaSelect(sql, parametros);
+
+            if (tabela.Rows.Count == 0)
+                return null;
+
+            DataRow registro = tabela.Rows[0];
+            return MontaCurriculo(registro);
         }
 
         /// <summary>
@@ -37,8 +58,8 @@ namespace Curriculos_ASP.NET.DAOs
            "update curriculos set nome = @nome, endereco = @endereco , telefone = @telefone, pretencaoSalarial = @pretencaoSalarial, cargoPretendido = @cargoPretendido, instituicaoFormacao1 = @instituicaoFormacao1, tipoFormacao1 = @tipoFormacao1," +
            " formacao1 = @formacao1, instituicaoFormacao2 = @instituicaoFormacao2, tipoFormacao2 = @tipoFormacao2, formacao2 = @formacao2, instituicaoFormacao3 = @instituicaoFormacao3, tipoFormacao3 = @tipoFormacao3, formacao3 = @formacao3, instituicaoFormacao4 = @instituicaoFormacao4," +
            " tipoFormacao4 = @tipoFormacao4, formacao4 = @formacao4, instituicaoFormacao5 = @instituicaoFormacao5, tipoFormacao5 = @tipoFormacao5, formacao5 = @formacao5, empresaExperiencia1 = @empresaExperiencia1, tipoExperiencia1 = @tipoExperiencia1, experiencia1 = @experiencia1," +
-           " empresaExperiencia2 = @empresaExperiencia2, tipoExperiencia2 = @tipoExperiencia2, experiencia2 = @experiencia2, empresaExperiencia3 = @empresaExperiencia3, tipoExperiencia3 = @tipoExperiencia3, experiencia3 = @experiencia3, idioma1 = @idioma1, nivelIdioma1 = @nivelIdioma1, idioma2 = @idioma2, nivelIdioma2 = @nivelIdioma2, idioma3 = @idioma3, nivelIdioma3 = @nivelIdioma3," +
-           " where id = @cpf";
+           " empresaExperiencia2 = @empresaExperiencia2, tipoExperiencia2 = @tipoExperiencia2, experiencia2 = @experiencia2, empresaExperiencia3 = @empresaExperiencia3, tipoExperiencia3 = @tipoExperiencia3, experiencia3 = @experiencia3, idioma1 = @idioma1, nivelIdioma1 = @nivelIdioma1, idioma2 = @idioma2, nivelIdioma2 = @nivelIdioma2, idioma3 = @idioma3, nivelIdioma3 = @nivelIdioma3" +
+           " where cpf = @cpf";
 
             HelperDAO.ExecutaSql(sql, CriaParametros(curriculo));
         }
@@ -51,8 +72,10 @@ namespace Curriculos_ASP.NET.DAOs
         {
             //Verificar a aplicação de sql injection
             string sql = "delete curriculos where cpf = @cpf";
+            SqlParameter[] parametros = new SqlParameter[1];
+            parametros[0] = new SqlParameter("cpf", cpf);
 
-            HelperDAO.ExecutaSql(sql);
+            HelperDAO.ExecutaSql(sql, parametros);
         }
 
         /// <summary>
@@ -129,6 +152,41 @@ namespace Curriculos_ASP.NET.DAOs
             CurriculoViewModel c = new CurriculoViewModel();
             c.nome = registro["nome"].ToString();
             c.cpf = registro["cpf"].ToString();
+            c.endereco = registro["endereco"].ToString();
+            c.telefone = registro["telefone"].ToString();
+            c.pretencaoSalarial = Convert.ToDouble(registro["pretencaoSalarial"]);
+            c.cargoPretendido = registro["cargoPretendido"].ToString();
+            c.instituicaoFormacao1 = registro["instituicaoFormacao1"].ToString();
+            c.tipoFormacao1 = registro["tipoFormacao1"].ToString();
+            c.formacao1 = registro["formacao1"].ToString();
+            c.instituicaoFormacao2 = registro["instituicaoFormacao2"].ToString();
+            c.tipoFormacao2 = registro["tipoFormacao2"].ToString();
+            c.formacao2 = registro["formacao2"].ToString();
+            c.instituicaoFormacao3 = registro["instituicaoFormacao3"].ToString();
+            c.tipoFormacao3 = registro["tipoFormacao3"].ToString();
+            c.formacao3 = registro["formacao3"].ToString();
+            c.instituicaoFormacao4 = registro["instituicaoFormacao4"].ToString();
+            c.tipoFormacao4 = registro["tipoFormacao4"].ToString();
+            c.formacao4 = registro["formacao4"].ToString();
+            c.instituicaoFormacao5 = registro["instituicaoFormacao5"].ToString();
+            c.tipoFormacao5 = registro["tipoFormacao5"].ToString();
+            c.formacao5 = registro["formacao5"].ToString();
+            c.empresaExperiencia1 = registro["empresaExperiencia1"].ToString();
+            c.tipoExperiencia1 = registro["tipoExperiencia1"].ToString();
+            c.experiencia1 = registro["experiencia1"].ToString();
+            c.empresaExperiencia2 = registro["empresaExperiencia2"].ToString();
+            c.tipoExperiencia2 = registro["tipoExperiencia2"].ToString();
+            c.experiencia2 = registro["experiencia2"].ToString();
+            c.empresaExperiencia3 = registro["empresaExperiencia3"].ToString();
+            c.tipoExperiencia3 = registro["tipoExperiencia3"].ToString();
+            c.experiencia3 = registro["experiencia3"].ToString();
+            c.idioma1 = registro["idioma1"].ToString();
+            c.nivelIdioma1 = registro["nivelIdioma1"].ToString();
+            c.idioma2 = registro["idioma2"].ToString();
+            c.nivelIdioma2 = registro["nivelIdioma2"].ToString();
+            c.idioma3 = registro["idioma3"].ToString();
+            c.nivelIdioma3 = registro["nivelIdioma3"].ToString();
+
             return c;
         }
     }

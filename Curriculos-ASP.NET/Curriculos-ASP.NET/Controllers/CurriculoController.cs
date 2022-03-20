@@ -28,7 +28,7 @@ namespace Curriculos_ASP.NET.Controllers
 
         public IActionResult Create()
         {
-            return View("Form");
+            return View("Form", new CurriculoViewModel());
         }
 
         public IActionResult Salvar(CurriculoViewModel curriculo)
@@ -36,7 +36,11 @@ namespace Curriculos_ASP.NET.Controllers
             try
             {
                 CurriculoDAO dao = new CurriculoDAO();
-                dao.Inserir(curriculo);
+                if (dao.Consulta(curriculo.cpf) == null)
+                    dao.Inserir(curriculo);
+                else
+                    dao.Alterar(curriculo);
+
                 return RedirectToAction("Index");
             }
             catch (Exception erro)
@@ -45,5 +49,23 @@ namespace Curriculos_ASP.NET.Controllers
             }
 
         }
+
+        public IActionResult Edit(string cpf)
+        {
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                CurriculoViewModel curriculo = dao.Consulta(cpf);
+                if (curriculo == null)
+                    return RedirectToAction("index");
+                else
+                    return View("Form", curriculo);
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
+        }
+
     }
 }

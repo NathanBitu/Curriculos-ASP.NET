@@ -1,111 +1,113 @@
-﻿<form asp-action="salvar">
+﻿@model CurriculoViewModel
+
+<form asp-action="salvar">
     <label class="form-label"> Nome </label>
-    <input type="text" name="nome" class="form-control" />
+    <input type="text" name="nome" value=@Model.nome class="form-control" />
 
     <label class="form-label"> CPF </label>
-    <input type="text" name="cpf" class="form-control" />
+    <input type="text" name="cpf" value=@Model.cpf class="form-control" />
 
     <label class="form-label"> Endereço </label>
-    <input type="text" name="endereco" class="form-control" />
+    <input type="text" name="endereco" value=@Model.endereco class="form-control" />
 
     <label class="form-label"> Telefone </label>
-    <input type="text" name="telefone" class="form-control" />
+    <input type="text" name="telefone" value=@Model.telefone class="form-control" />
 
     <label class="form-label"> Pretenção Salarial </label>
-    <input type="text" name="pretencaoSalarial" class="form-control" />
+    <input type="text" name="pretencaoSalarial" value=@Model.pretencaoSalarial class="form-control" />
     
     <label class="form-label"> Cargo Pretendido </label>
-    <input type="text" name="cargoPretendido" class="form-control" />
+    <input type="text" name="cargoPretendido" value=@Model.cargoPretendido class="form-control" />
 
     <label class="form-label"> Instituição de Formação </label>
-    <input type="text" name="instituicaoFormacao1" class="form-control" />
+    <input type="text" name="instituicaoFormacao1" value=@Model.instituicaoFormacao1 class="form-control" />
     
     <label class="form-label"> Tipo de Formação </label>
-    <input type="text" name="tipoFormacao1" class="form-control" />
+    <input type="text" name="tipoFormacao1" value=@Model.tipoFormacao1 class="form-control" />
     
     <label class="form-label"> Formação </label>
-    <input type="text" name="formacao1" class="form-control" />
+    <input type="text" name="formacao1" value=@Model.formacao1 class="form-control" />
     
     <label class="form-label"> Instituição de Formação </label>
-    <input type="text" name="instituicaoFormacao2" class="form-control" />
+    <input type="text" name="instituicaoFormacao2" value=@Model.instituicaoFormacao2 class="form-control" />
     
     <label class="form-label"> Tipo de Formação </label>
-    <input type="text" name="tipoFormacao2" class="form-control" />
+    <input type="text" name="tipoFormacao2" value=@Model.instituicaoFormacao2 class="form-control" />
     
     <label class="form-label"> Formação </label>
-    <input type="text" name="formacao2" class="form-control" />
+    <input type="text" name="formacao2" value=@Model.formacao2 class="form-control" />
     
     <label class="form-label"> Instituição de Formação </label>
-    <input type="text" name="instituicaoFormacao3" class="form-control" />
+    <input type="text" name="instituicaoFormacao3" value=@Model.instituicaoFormacao3 class="form-control" />
     
     <label class="form-label"> Tipo de Formação </label>
-    <input type="text" name="tipoFormacao3" class="form-control" />
+    <input type="text" name="tipoFormacao3" value=@Model.tipoFormacao3 class="form-control" />
     
     <label class="form-label"> Formação </label>
-    <input type="text" name="formacao3" class="form-control" />
+    <input type="text" name="formacao3" value=@Model.formacao3 class="form-control" />
 
     <label class="form-label"> Instituição de Formação </label>
-    <input type="text" name="instituicaoFormacao4" class="form-control" />
+    <input type="text" name="instituicaoFormacao4" value=@Model.instituicaoFormacao4 class="form-control" />
     
     <label class="form-label"> Tipo de Formação </label>
-    <input type="text" name="tipoFormacao4" class="form-control" />
+    <input type="text" name="tipoFormacao4" value=@Model.tipoFormacao4 class="form-control" />
     
     <label class="form-label"> Formação </label>
-    <input type="text" name="formacao4" class="form-control" />
+    <input type="text" name="formacao4" value=@Model.formacao4 class="form-control" />
 
     <label class="form-label"> Instituição de Formação </label>
-    <input type="text" name="instituicaoFormacao5" class="form-control" />
+    <input type="text" name="instituicaoFormacao5" value=@Model.instituicaoFormacao5 class="form-control" />
     
     <label class="form-label"> Tipo de Formação </label>
-    <input type="text" name="tipoFormacao5" class="form-control" />
+    <input type="text" name="tipoFormacao5" value=@Model.tipoFormacao5 class="form-control" />
     
     <label class="form-label"> Formação </label>
-    <input type="text" name="formacao5" class="form-control" />
+    <input type="text" name="formacao5" value=@Model.formacao5 class="form-control" />
 
     <label class="form-label"> Empresa Experiência </label>
-    <input type="text" name="empresaExperiencia1" class="form-control" />
+    <input type="text" name="empresaExperiencia1" value=@Model.empresaExperiencia1 class="form-control" />
 
     <label class="form-label"> Tipo de Experiência </label>
-    <input type="text" name="tipoExperiencia1" class="form-control" />
+    <input type="text" name="tipoExperiencia1" value=@Model.tipoExperiencia1 class="form-control" />
 
     <label class="form-label"> Experência </label>
-    <input type="text" name="experiencia1" class="form-control" />
+    <input type="text" name="experiencia1" value=@Model.experiencia1 class="form-control" />
 
     <label class="form-label"> Empresa Experiência </label>
-    <input type="text" name="empresaExperiencia2" class="form-control" />
+    <input type="text" name="empresaExperiencia2" value=@Model.empresaExperiencia2 class="form-control" />
 
     <label class="form-label"> Tipo de Experiência </label>
-    <input type="text" name="tipoExperiencia2" class="form-control" />
+    <input type="text" name="tipoExperiencia2" value=@Model.tipoExperiencia2 class="form-control" />
 
     <label class="form-label"> Experência </label>
-    <input type="text" name="experiencia2" class="form-control" />
+    <input type="text" name="experiencia2" value=@Model.experiencia2 class="form-control" />
 
     <label class="form-label"> Empresa Experiência </label>
-    <input type="text" name="empresaExperiencia3" class="form-control" />
+    <input type="text" name="empresaExperiencia3" value=@Model.empresaExperiencia3 class="form-control" />
 
     <label class="form-label"> Tipo de Experiência </label>
-    <input type="text" name="tipoExperiencia3" class="form-control" />
+    <input type="text" name="tipoExperiencia3" value=@Model.tipoExperiencia3 class="form-control" />
 
     <label class="form-label"> Experência </label>
-    <input type="text" name="experiencia3" class="form-control" />
+    <input type="text" name="experiencia3" value=@Model.experiencia3 class="form-control" />
     
     <label class="form-label"> Idioma </label>
-    <input type="text" name="idioma1" class="form-control" />
+    <input type="text" name="idioma1" value=@Model.idioma1 class="form-control" />
     
     <label class="form-label"> Nível </label>
-    <input type="text" name="nivelIdioma1" class="form-control" />
+    <input type="text" name="nivelIdioma1" value=@Model.nivelIdioma1 class="form-control" />
     
     <label class="form-label"> Idioma </label>
-    <input type="text" name="idioma2" class="form-control" />
+    <input type="text" name="idioma2" value=@Model.idioma2 class="form-control" />
     
     <label class="form-label"> Nível </label>
-    <input type="text" name="nivelIdioma2" class="form-control" />
+    <input type="text" name="nivelIdioma2" value=@Model.nivelIdioma2 class="form-control" />
     
     <label class="form-label"> Idioma </label>
-    <input type="text" name="idioma3" class="form-control" />
+    <input type="text" name="idioma3" value=@Model.idioma3 class="form-control" />
     
     <label class="form-label"> Nível </label>
-    <input type="text" name="nivelIdioma3" class="form-control" />
+    <input type="text" name="nivelIdioma3" value=@Model.nivelIdioma3 class="form-control" />
     
     <br />
     <input type="submit" value="Salvar" class="btn btn-info" />

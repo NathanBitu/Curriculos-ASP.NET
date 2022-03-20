@@ -6,7 +6,7 @@
         public string cpf { get; set; }
         public string endereco { get; set; }
         public string telefone { get; set; }
-        public float pretencaoSalarial { get; set; }
+        public double pretencaoSalarial { get; set; }
         public string cargoPretendido { get; set; }
         public string instituicaoFormacao1 { get; set; }
         public string tipoFormacao1 { get; set; }

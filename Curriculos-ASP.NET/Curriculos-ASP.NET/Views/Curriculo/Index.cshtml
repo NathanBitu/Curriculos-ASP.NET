@@ -9,6 +9,7 @@
 
 <table class="table table-striped table-responsive">
     <tr>
+        <th>Ações</th>
         <th>Nome</th>
         <th>CPF</th>
     </tr>
@@ -16,6 +17,7 @@
     @foreach (var curriculo in Model)
     {
         <tr>
+            <td><a href="/curriculo/Edit?cpf=@curriculo.cpf">Editar</a> </td>
             <td> @curriculo.nome</td>
             <td> @curriculo.cpf</td>
         </tr>
