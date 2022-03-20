@@ -21,16 +21,8 @@
             <td> @curriculo.nome</td>
             <td> @curriculo.cpf</td>
             <td><a href="/curriculo/Edit?cpf=@curriculo.cpf">Editar</a></td>
-            <td><a href="javascript:apagarCurriculo(@curriculo.cpf)">Apagar</a></td>
+            <td><a href="/curriculo/Delete?cpf=@curriculo.cpf">Apagar</a></td>
         </tr>
     }
 
 </table>
-
-<script>
- function apagarCurriculo(cpf)
- {
- if (confirm('Confirma a exclusão do registro?'))
- location.href = 'curriculo/Delete?cpf=' + cpf;
- }
-</script>
