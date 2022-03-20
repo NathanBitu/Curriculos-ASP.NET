@@ -1,0 +1,28 @@
+﻿@model List<CurriculoViewModel>;
+
+<h2>Listagem de Currículos</h2>
+<br />
+
+<a href="/curriculo/create" class="btn btn-success">Novo Registro</a>
+<br />
+<br />
+
+<table class="table table-striped table-responsive">
+    <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+    </tr>
+
+    @foreach (var curriculo in Model)
+    {
+        <tr>
+            <td> @curriculo.nome</td>
+            <td> @curriculo.cpf</td>
+        </tr>
+    }
+
+</table>
+
+
+
+

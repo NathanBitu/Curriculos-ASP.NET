@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\FTT\\EC5\\Linguagem de programação I\\N2B1\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET.csproj": {}
+    "C:\\Users\\Leonardo\\OneDrive\\Área de Trabalho\\FTT\\EC5\\Linguagem de Programação I\\N2B1\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\FTT\\EC5\\Linguagem de programação I\\N2B1\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET.csproj": {
+    "C:\\Users\\Leonardo\\OneDrive\\Área de Trabalho\\FTT\\EC5\\Linguagem de Programação I\\N2B1\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\FTT\\EC5\\Linguagem de programação I\\N2B1\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET.csproj",
+        "projectUniqueName": "C:\\Users\\Leonardo\\OneDrive\\Área de Trabalho\\FTT\\EC5\\Linguagem de Programação I\\N2B1\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET.csproj",
         "projectName": "Curriculos-ASP.NET",
-        "projectPath": "D:\\Documents\\FTT\\EC5\\Linguagem de programação I\\N2B1\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET.csproj",
-        "packagesPath": "C:\\Users\\bitun\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\FTT\\EC5\\Linguagem de programação I\\N2B1\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\obj\\",
+        "projectPath": "C:\\Users\\Leonardo\\OneDrive\\Área de Trabalho\\FTT\\EC5\\Linguagem de Programação I\\N2B1\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET.csproj",
+        "packagesPath": "C:\\Users\\Leonardo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Leonardo\\OneDrive\\Área de Trabalho\\FTT\\EC5\\Linguagem de Programação I\\N2B1\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bitun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leonardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

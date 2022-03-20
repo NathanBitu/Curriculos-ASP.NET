@@ -1,18 +1,19 @@
 drop database Curriculos
 
 create database Curriculos
+
 use Curriculos
 
 create table curriculos(
-	nome varchar(50),
+	nome varchar(50) not null,
 	cpf varchar(14) primary key not null,
-	endereco varchar(50),
-	telefone varchar(11),
-	pretencaoSalarial float,
-	cargoPretendido varchar(50),
-	instituicaoFormacao1 varchar(50),
-	tipoFormacao1 varchar(50),
-	formacao1 varchar(50),
+	endereco varchar(50) not null,
+	telefone varchar(11) not null,
+	pretencaoSalarial float not null,
+	cargoPretendido varchar(50) not null,
+	instituicaoFormacao1 varchar(50) not null,
+	tipoFormacao1 varchar(50) not null,
+	formacao1 varchar(50) not null,
 	instituicaoFormacao2 varchar(50),
 	tipoFormacao2 varchar(50),
 	formacao2 varchar(50),
@@ -35,6 +36,11 @@ create table curriculos(
 	tipoExperiencia3 varchar(50),
 	experiencia3 varchar(50),
 	idioma1 varchar(15),
+	nivelIdioma1 varchar(15),
 	idioma2 varchar(15),
+	nivelIdioma2 varchar(15),
 	idioma3 varchar(15),
+	nivelIdioma3 varchar(15)
 )
+
+select * from curriculos

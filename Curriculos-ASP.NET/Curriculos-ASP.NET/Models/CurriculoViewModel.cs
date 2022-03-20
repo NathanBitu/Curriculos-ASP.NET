@@ -33,7 +33,10 @@
         public string tipoExperiencia3 { get; set; }
         public string experiencia3 { get; set; }
         public string idioma1 { get; set; }
+        public string nivelIdioma1 { get; set; }
         public string idioma2 { get; set; }
+        public string nivelIdioma2 { get; set; }
         public string idioma3 { get; set; }
+        public string nivelIdioma3 { get; set; }
     }
 }
