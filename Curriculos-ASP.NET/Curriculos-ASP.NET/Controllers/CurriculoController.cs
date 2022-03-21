@@ -80,5 +80,18 @@ namespace Curriculos_ASP.NET.Controllers
                 return View("Error", new ErrorViewModel(erro.ToString()));
             }
         }
+        public IActionResult Resume(string cpf)
+        {
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                CurriculoViewModel curriculo = dao.Consulta(cpf);
+                return View("Resume", curriculo);
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
+        }
     }
 }
