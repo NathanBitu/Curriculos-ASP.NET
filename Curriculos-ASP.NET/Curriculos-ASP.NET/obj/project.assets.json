@@ -6616,19 +6616,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ariel\\.nuget\\packages\\": {}
+    "C:\\Users\\Leonardo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ariel\\Documents\\Trabsons\\Programas\\linguagem de programação1 ec5\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET.csproj",
+      "projectUniqueName": "C:\\Users\\Leonardo\\OneDrive\\Área de Trabalho\\FTT\\EC5\\Linguagem de Programação I\\N2B1\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET.csproj",
       "projectName": "Curriculos-ASP.NET",
-      "projectPath": "C:\\Users\\Ariel\\Documents\\Trabsons\\Programas\\linguagem de programação1 ec5\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET.csproj",
-      "packagesPath": "C:\\Users\\Ariel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ariel\\Documents\\Trabsons\\Programas\\linguagem de programação1 ec5\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\obj\\",
+      "projectPath": "C:\\Users\\Leonardo\\OneDrive\\Área de Trabalho\\FTT\\EC5\\Linguagem de Programação I\\N2B1\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET.csproj",
+      "packagesPath": "C:\\Users\\Leonardo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Leonardo\\OneDrive\\Área de Trabalho\\FTT\\EC5\\Linguagem de Programação I\\N2B1\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\Curriculos-ASP.NET\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Ariel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Leonardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6685,7 +6685,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

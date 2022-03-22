@@ -1,6 +1,5 @@
+@using Curriculos_ASP.NET.Models
 @model CurriculoViewModel
-
-
 
 <header class="bg-primary bg-gradient text-white py-5">
     <div class="container">
@@ -42,6 +41,7 @@
 <main class="container">
     <div class="row">
         <div class="col-md mb-5">
+            <h1 >Experiência Profissional</h1>
             <h2>@Model.empresaExperiencia1</h2>
             <h3>@Model.tipoExperiencia1</h3>
             <p>@Model.experiencia1</p>
@@ -53,6 +53,7 @@
             <p>@Model.experiencia3</p>
         </div>
         <div class="col-md mb-5">
+            <h1>Formações Acadêmicas</h1>
             <h2>@Model.formacao1</h2>
             <h3>@Model.instituicaoFormacao1</h3>
             <p>@Model.tipoFormacao1</p>
@@ -72,20 +73,21 @@
     </div>
     <div class="row">
         <div class="col-md mb-5">
-            <h1>Busco emprego de: @Model.cargoPretendido</h1>
-            <h3>Pretendo ganhar: R$@Model.pretencaoSalarial.ToString()</h3>
+            <h1>Vaga pretendida: @Model.cargoPretendido</h1>
+            <h3>Salário pretendido: R$@Model.pretencaoSalarial.ToString("0.00")</h3>
         </div>
         <div class="col-md">
-            <h1>@Model.idioma1</h1>
-            <h3>@Model.nivelIdioma1</h3>
-            <h1>@Model.idioma2</h1>
-            <h3>@Model.nivelIdioma2</h3>
-            <h1>@Model.idioma3</h1>
-            <h3>@Model.nivelIdioma3</h3>
+            <h1>Idiomas</h1>
+            <h2>@Model.idioma1</h2>
+            <p>@Model.nivelIdioma1</p>
+            <h2>@Model.idioma2</h2>
+            <p>@Model.nivelIdioma2</p>
+            <h2>@Model.idioma3</h2>
+            <p>@Model.nivelIdioma3</p>
         </div>
     </div>
     <a href="/curriculo/index" class="btn btn-success">Voltar</a>
 </main>
 <footer class="bg-dark text-white-50 text-center mt-5 p-3">
-    &copy; Palmeiras não tem mundial <a href="#" class="text-white-50">Corinthians é foda</a> | <a href="#" class="text-white-50">Te amo timão</a> | <a href="#" class="text-white-50">Eduardo é um nome bonito</a>
+    &copy; Palmeiras não tem mundial |<a href="#" class="text-white-50">Corinthians é foda</a> | <a href="#" class="text-white-50">Te amo timão</a> | <a href="#" class="text-white-50">Eduardo é um nome bonito</a>
 </footer>

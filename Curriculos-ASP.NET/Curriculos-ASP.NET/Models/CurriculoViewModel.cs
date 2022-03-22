@@ -26,7 +26,7 @@
         public string empresaExperiencia1 { get; set; }
         public string tipoExperiencia1 { get; set; }
         public string experiencia1 { get; set; }
-        public string? empresaExperiencia2 { get; set; }
+        public string empresaExperiencia2 { get; set; }
         public string? tipoExperiencia2 { get; set; }
         public string? experiencia2 { get; set; }
         public string? empresaExperiencia3 { get; set; }
