@@ -29,10 +29,10 @@ namespace Curriculos_ASP.NET.DAOs
         }
 
         /// <summary>
-        /// Método que consulta um aluno
+        /// Método que consulta um aluno.
         /// </summary>
-        /// <param name="cpf">String com CPF para buscar</param>
-        /// <returns></returns>
+        /// <param name="cpf">String com CPF para busca</param>
+        /// <returns>Objeto do tipo currículo</returns>
         public CurriculoViewModel Consulta(string cpf)
         {
             string sql = "select * from curriculos c where c.cpf = @cpf";
@@ -94,33 +94,114 @@ namespace Curriculos_ASP.NET.DAOs
             parametros[6] = new SqlParameter("instituicaoFormacao1", curriculo.instituicaoFormacao1);
             parametros[7] = new SqlParameter("tipoFormacao1", curriculo.tipoFormacao1);
             parametros[8] = new SqlParameter("formacao1", curriculo.formacao1);
-            parametros[9] = new SqlParameter("instituicaoFormacao2", curriculo.instituicaoFormacao2);
-            parametros[10] = new SqlParameter("tipoFormacao2", curriculo.tipoFormacao2);
-            parametros[11] = new SqlParameter("formacao2", curriculo.formacao2);
-            parametros[12] = new SqlParameter("instituicaoFormacao3", curriculo.instituicaoFormacao3);
-            parametros[13] = new SqlParameter("tipoFormacao3", curriculo.tipoFormacao3);
-            parametros[14] = new SqlParameter("formacao3", curriculo.formacao3);
-            parametros[15] = new SqlParameter("instituicaoFormacao4", curriculo.instituicaoFormacao4);
-            parametros[16] = new SqlParameter("tipoFormacao4", curriculo.tipoFormacao4);
-            parametros[17] = new SqlParameter("formacao4", curriculo.formacao4);
-            parametros[18] = new SqlParameter("instituicaoFormacao5", curriculo.instituicaoFormacao5);
-            parametros[19] = new SqlParameter("tipoFormacao5", curriculo.tipoFormacao5);
-            parametros[20] = new SqlParameter("formacao5", curriculo.formacao5);
+
+            if (curriculo.instituicaoFormacao2 != null)
+            {
+                parametros[9] = new SqlParameter("instituicaoFormacao2", curriculo.instituicaoFormacao2);
+                parametros[10] = new SqlParameter("tipoFormacao2", curriculo.tipoFormacao2);
+                parametros[11] = new SqlParameter("formacao2", curriculo.formacao2);
+            } 
+            else
+            {
+                parametros[9] = new SqlParameter("instituicaoFormacao2", DBNull.Value);
+                parametros[10] = new SqlParameter("tipoFormacao2", DBNull.Value);
+                parametros[11] = new SqlParameter("formacao2", DBNull.Value);
+            }
+                    
+            if (curriculo.instituicaoFormacao3 != null)
+            {
+                parametros[12] = new SqlParameter("instituicaoFormacao3", curriculo.instituicaoFormacao3);
+                parametros[13] = new SqlParameter("tipoFormacao3", curriculo.tipoFormacao3);
+                parametros[14] = new SqlParameter("formacao3", curriculo.formacao3);
+            } 
+            else
+            {
+                parametros[12] = new SqlParameter("instituicaoFormacao3", DBNull.Value);
+                parametros[13] = new SqlParameter("tipoFormacao3", DBNull.Value);
+                parametros[14] = new SqlParameter("formacao3", DBNull.Value);
+            }
+                
+            if (curriculo.instituicaoFormacao4 != null)
+            {
+                parametros[15] = new SqlParameter("instituicaoFormacao4", curriculo.instituicaoFormacao4);
+                parametros[16] = new SqlParameter("tipoFormacao4", curriculo.tipoFormacao4);
+                parametros[17] = new SqlParameter("formacao4", curriculo.formacao4);
+            }
+            else
+            {
+                parametros[15] = new SqlParameter("instituicaoFormacao4", DBNull.Value);
+                parametros[16] = new SqlParameter("tipoFormacao4", DBNull.Value);
+                parametros[17] = new SqlParameter("formacao4", DBNull.Value);
+            }
+                
+            if (curriculo.instituicaoFormacao5 != null)
+            {
+                parametros[18] = new SqlParameter("instituicaoFormacao5", curriculo.instituicaoFormacao5);
+                parametros[19] = new SqlParameter("tipoFormacao5", curriculo.tipoFormacao5);
+                parametros[20] = new SqlParameter("formacao5", curriculo.formacao5);
+            }
+            else
+            {
+                parametros[18] = new SqlParameter("instituicaoFormacao5", DBNull.Value);
+                parametros[19] = new SqlParameter("tipoFormacao5", DBNull.Value);
+                parametros[20] = new SqlParameter("formacao5", DBNull.Value);
+            }
+                
             parametros[21] = new SqlParameter("empresaExperiencia1", curriculo.empresaExperiencia1);
             parametros[22] = new SqlParameter("tipoExperiencia1", curriculo.tipoExperiencia1);
             parametros[23] = new SqlParameter("experiencia1", curriculo.experiencia1);
-            parametros[24] = new SqlParameter("empresaExperiencia2", curriculo.empresaExperiencia2);
-            parametros[25] = new SqlParameter("tipoExperiencia2", curriculo.tipoExperiencia2);
-            parametros[26] = new SqlParameter("experiencia2", curriculo.experiencia2);
-            parametros[27] = new SqlParameter("empresaExperiencia3", curriculo.empresaExperiencia3);
-            parametros[28] = new SqlParameter("tipoExperiencia3", curriculo.tipoExperiencia3);
-            parametros[29] = new SqlParameter("experiencia3", curriculo.experiencia3);
+
+            if (curriculo.empresaExperiencia2 != null)
+            {
+                parametros[24] = new SqlParameter("empresaExperiencia2", curriculo.empresaExperiencia2);
+                parametros[25] = new SqlParameter("tipoExperiencia2", curriculo.tipoExperiencia2);
+                parametros[26] = new SqlParameter("experiencia2", curriculo.experiencia2);
+            }
+            else
+            {
+                parametros[24] = new SqlParameter("empresaExperiencia2", DBNull.Value);
+                parametros[25] = new SqlParameter("tipoExperiencia2", DBNull.Value);
+                parametros[26] = new SqlParameter("experiencia2", DBNull.Value);
+            }
+               
+            if (curriculo.empresaExperiencia3 != null)
+            {
+                parametros[27] = new SqlParameter("empresaExperiencia3", curriculo.empresaExperiencia3);
+                parametros[28] = new SqlParameter("tipoExperiencia3", curriculo.tipoExperiencia3);
+                parametros[29] = new SqlParameter("experiencia3", curriculo.experiencia3);
+            }
+            else
+            {
+                parametros[27] = new SqlParameter("empresaExperiencia3", DBNull.Value);
+                parametros[28] = new SqlParameter("tipoExperiencia3", DBNull.Value);
+                parametros[29] = new SqlParameter("experiencia3", DBNull.Value);
+            }
+                
             parametros[30] = new SqlParameter("idioma1", curriculo.idioma1);
             parametros[31] = new SqlParameter("nivelIdioma1", curriculo.nivelIdioma1);
-            parametros[32] = new SqlParameter("idioma2", curriculo.idioma2);
-            parametros[33] = new SqlParameter("nivelIdioma2", curriculo.nivelIdioma2);
-            parametros[34] = new SqlParameter("idioma3", curriculo.idioma3);
-            parametros[35] = new SqlParameter("nivelIdioma3", curriculo.nivelIdioma3);
+
+            if (curriculo.idioma2 != null)
+            {
+                parametros[32] = new SqlParameter("idioma2", curriculo.idioma2);
+                parametros[33] = new SqlParameter("nivelIdioma2", curriculo.nivelIdioma2);
+            }
+            else
+            {
+                parametros[32] = new SqlParameter("idioma2", DBNull.Value);
+                parametros[33] = new SqlParameter("nivelIdioma2", DBNull.Value);
+            }
+               
+            if (curriculo.idioma3 != null)
+            {
+                parametros[34] = new SqlParameter("idioma3", curriculo.idioma3);
+                parametros[35] = new SqlParameter("nivelIdioma3", curriculo.nivelIdioma3);
+            }
+            else
+            {
+                parametros[34] = new SqlParameter("idioma3", DBNull.Value);
+                parametros[35] = new SqlParameter("nivelIdioma3", DBNull.Value);
+            }
+                
 
             return parametros;
         }
